@@ -1,0 +1,390 @@
+@use '@styles/utils' as *;
+
+.device{
+    width: 100%;
+    aspect-ratio: 2.26 / 1;
+    padding-top: 11rem;
+    // padding-bottom: 6.5rem;
+    // margin-bottom: 5rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)) ,
+                 url(@images/device3.png) no-repeat center center / cover;
+
+    .device-caption{
+        font-size: 2.4rem;
+        color: $title-color;
+        font-weight: 400;
+        font-family: $third-font;
+        text-align: center;
+        padding-bottom: 2.5rem;
+    }
+
+    .device-title{
+        position: relative;
+
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $title-color;
+        font-weight: 700;
+        font-family: $primary-font;
+        text-align: center;
+        padding-bottom: 4rem;
+        margin-bottom: 6.5rem;
+
+
+        &::after{
+            content: "";
+            @include absoluteCenter(left);
+            bottom: 0;
+            width: 6rem;
+            height: 0.3rem;
+            background-color: $primary-color;
+        }
+    }
+
+    .device-image{
+        position: relative;
+        inset: 0;
+        width: 120rem;
+        aspect-ratio: 2.15 / 1;
+    }
+    
+    .device-image-table{
+        // width: 47.7rem;
+        // aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device-image-phone{
+        width: 27.4rem;
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+
+}
+
+@include between(xxl,xxxl){
+      $dơwn-percent: 0.27;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+};
+@include between(xl,xxl){
+      $dơwn-percent: 0.375;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 8rem;
+    }
+
+    .device .device-caption {
+      font-size: 2.4rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .device .device-title {
+      font-size: 3rem;
+      padding-bottom: 4rem;
+      margin-bottom: 6.5rem;
+    }
+};
+@include between(lg,xl){
+      $dơwn-percent: 0.483;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 7rem;
+    }
+
+    .device .device-caption {
+      font-size: 2.2rem;
+      padding-bottom: 2.2rem;
+    }
+
+    .device .device-title {
+      font-size: 2.8rem;
+      padding-bottom: 3.5rem;
+      margin-bottom: 4.5rem;
+    }
+};
+@include between(md,lg){
+      $dơwn-percent: 0.6;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 7rem;
+    }
+
+    .device .device-caption {
+      font-size: 2.1rem;
+      padding-bottom: 1.8rem;
+    }
+
+    .device .device-title {
+      font-size: 2.6rem;
+      padding-bottom: 3rem;
+      margin-bottom: 4.5rem;
+    }
+};
+@include between(sm,md){
+      $dơwn-percent: 0.7;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 5rem;
+    }
+
+    .device .device-caption {
+      font-size: 2rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .device .device-title {
+      font-size: 2.4rem;
+      padding-bottom: 2rem;
+      margin-bottom: 4rem;
+    }
+    .device .device-title::after {
+      width: 5rem;
+      height: 0.2rem;
+    }
+};
+@include between(xs,sm){
+      $dơwn-percent: 0.75;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 3rem;
+    }
+
+    .device .device-caption {
+      font-size: 1.5rem;
+      padding-bottom: 1.2rem;
+    }
+
+    .device .device-title {
+      font-size: 2rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .device .device-title::after {
+      width: 4rem;
+      height: 0.2rem;
+    }
+};
+@include between(xxs,xs){
+      $dơwn-percent: 0.8125;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 3rem;
+    }
+
+    .device .device-caption {
+      font-size: 1.3rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .device .device-title {
+      font-size: 1.7rem;
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .device .device-title::after {
+      width: 4rem;
+      height: 0.2rem;
+    }
+};
+@include media(max,xxs){
+      $dơwn-percent: 0.875;
+     .device .device-image-table{
+        width: calc(47.7rem - (47.7rem * $dơwn-percent));
+        aspect-ratio: 0.82 / 1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .device .device-image-phone{
+        width: calc(27.4rem - (27.4rem * $dơwn-percent));
+        aspect-ratio: 0.575/1;
+        position: absolute;
+        left: 60%;
+        bottom: -20%;
+    }
+    .device .device-image{
+        position: relative;
+        inset: 0;
+        width: calc(120rem - (120rem * $dơwn-percent));
+        aspect-ratio: 2.15 / 1;
+        margin: 0 auto;
+    }
+
+    .device {
+      padding-top: 1.5rem;
+    }
+
+    .device .device-caption {
+      font-size: 1.1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .device .device-title {
+      font-size: 1.3rem;
+      padding-bottom: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .device .device-title::after {
+      width: 3rem;
+      height: 0.1rem;
+    }
+};
+

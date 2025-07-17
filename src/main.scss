@@ -1,0 +1,69 @@
+// main.scss
+
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@assets/font_face';
+
+
+// ----------------------------------
+// 🧠 GLOBAL CONFIG
+// ----------------------------------
+
+@use '@styles/utils';
+
+
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+@use 'slick-carousel/slick/slick.css';
+@use 'slick-carousel/slick/slick-theme.css';
+
+
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+@use '@styles/pages/home';
+
+
+// ----------------------------------
+// 🎨 THEME
+// ----------------------------------
+
+@use '@styles/themes';
+
+
+// // ----------------------------------
+
+

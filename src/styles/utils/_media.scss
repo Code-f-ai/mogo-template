@@ -1,0 +1,50 @@
+@use "sass:map";
+
+$breakpoints: (
+  xxs: 360px,
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+
+@mixin media($type, $breakpoint) {
+  $value: map.get($breakpoints, $breakpoint);
+
+  @if $value == null {
+    @error "⛔ Breakpoint '#{$breakpoint}' chưa tồn tại.";
+  }
+
+  @if $type == max {
+
+    $value: $value - 0.01px;
+    
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else if $type == min {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "⛔ Loại media '#{$type}' không hợp lệ.";
+  }
+}
+
+@mixin between($min, $max) {
+  $minVal: map.get($breakpoints, $min);
+  $maxVal: map.get($breakpoints, $max);
+
+  @if $minVal == null or $maxVal == null {
+    @error "⛔ Breakpoint '#{$min}' hoặc '#{$max}' không tồn tại.";
+  }
+
+  $maxVal: $maxVal - 0.01px;
+
+  @media (min-width: $minVal) and (max-width: $maxVal) {
+    @content;
+  }
+}

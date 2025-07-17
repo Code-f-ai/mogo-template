@@ -1,0 +1,9 @@
+Các công cụ hỗ trợ lập trình SCSS
+
+utils :	tiện ích hỗ trợ	chứa biến, hàm, mixin dùng lại nhiều...
+
+_variables.scss :	biến SCSS	$primary-color, $spacing-lg,…
+
+_mixins.scss :	đoạn mã dùng lại	@mixin flex-center, @mixin respond($breakpoint)
+
+_functions.scss :	hàm trong SCSS	@function px-to-rem($px) – trả về giá trị rem

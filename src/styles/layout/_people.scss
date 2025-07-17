@@ -1,0 +1,347 @@
+@use '@styles/utils' as *;
+@use '@styles/layout/structure' as *;
+
+@include structure(people);
+.people{
+    background: linear-gradient(to right, rgba(white,0.8), rgba(white,0.8)),
+                url(@images/bg-people.png) no-repeat center center / cover;
+    
+    .people-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 1rem;
+
+    }
+    .people-item{
+        width: 50%;
+        display: flex;
+        align-items: flex-start;
+        padding: 3rem;
+    }
+
+    .people-img{
+        width: 11.5rem;
+        height: 11.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    .people-infor{
+        padding-left: 2.5rem;
+        max-width: 33.4rem;
+    }
+    .people-name{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        color: $title-color;
+        font-weight: 400;
+        font-family: $primary-font;
+        @include textellip(1);
+        padding-right: 15rem;
+    }
+
+    .people-job{
+        position: relative;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        color: $title-color;
+        font-weight: 300;
+        font-style: italic;
+        font-family: $secondary-font;
+        @include textellip(1);
+        padding-right: 10rem;
+
+    }
+
+    .people-infor-desc{
+        position: relative;
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+        color: $text-color;
+        font-weight: 400;
+        font-family: $secondary-color;
+        padding-top: 3rem;
+        margin-top: 2rem;
+        @include textellip(3);
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6rem;
+            height: 0.3rem;
+            background-color: $primary-color;
+        }
+    }
+
+} 
+
+
+
+@include between(lg,xl){
+    .people .people-img {
+        width: 10rem;
+        height: 10rem;
+    }
+    .people .people-infor {
+        padding-left: 2.5rem;
+    }
+    .people .people-name {
+        font-size: 1.3rem;
+    }
+    .people .people-job {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+    .people .people-infor-desc::before {
+        width: 6rem;
+        height: 0.3rem;
+    }
+    .people .people-infor-desc {
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        padding-top: 2rem;
+        margin-top: 1.5rem;
+    }
+}
+@include between(md,lg){
+    .people .people-caption {
+        padding-bottom: 2.5rem;
+        font-size: 2.1rem;
+    }
+    .people .people-title {
+        padding-bottom: 4rem;
+        margin-bottom: 4.5rem;
+        font-size: 2.6rem;
+    }
+    .people .people-img {
+        width: 8rem;
+        height: 8rem;
+    }
+    .people .people-infor {
+        padding-left: 1.5rem;
+    }
+    .people .people-name {
+        font-size: 1.1rem;
+        padding-right: 10rem;
+    }
+    .people .people-job {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+    .people .people-infor-desc::before {
+        width: 6rem;
+        height: 0.3rem;
+    }
+    .people .people-infor-desc {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        padding-top: 1.5rem;
+        margin-top: 1rem;
+    }
+    .people .people-item {
+        padding: 1.5rem;
+    }
+}
+@include between(sm,md){
+    .people .people-caption {
+        padding-bottom: 2.5rem;
+        font-size: 2.1rem;
+    }
+    .people .people-title {
+        padding-bottom: 4rem;
+        margin-bottom: 4.5rem;
+        font-size: 2.4rem;
+    }
+    .people .people-img {
+        width: 10rem;
+        height: 10rem;
+    }
+    .people .people-infor {
+        padding-left: 1.5rem;
+    }
+    .people .people-name {
+        font-size: 1.1rem;
+    }
+    .people .people-job {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+    .people .people-infor-desc::before {
+        width: 6rem;
+        height: 0.3rem;
+    }
+    .people .people-infor-desc {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        padding-top: 2rem;
+        margin-top: 1.5rem;
+    }
+    .people .people-item {
+        width: 85%;
+        padding: 1.5rem;
+    }
+    .people .people-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 1.5rem;
+    }
+}
+@include between(xs,sm){
+    .people{
+        padding-top: 6rem;
+    }
+    .people .people-caption {
+        padding-bottom: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .people .people-title {
+        padding-bottom: 4rem;
+        margin-bottom: 4.5rem;
+        font-size: 2rem;
+    }
+    .people .people-img {
+        width: 7rem;
+        height: 7rem;
+    }
+    .people .people-infor {
+        padding-left: 1.5rem;
+    }
+    .people .people-name {
+        font-size: 1.1rem;
+    }
+    .people .people-job {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+    .people .people-infor-desc::before {
+        width: 6rem;
+        height: 0.3rem;
+    }
+    .people .people-infor-desc {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        padding-top: 2rem;
+        margin-top: 1.5rem;
+    }
+    .people .people-item {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .people .people-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 1.5rem;
+    }
+}
+@include between(xxs,xs){
+    .people .people-title::after {
+        width: 5rem;
+        height: 0.2rem;
+    }
+    .people{
+        padding-top: 5rem;
+    }
+    .people .people-caption {
+        padding-bottom: 1.5rem;
+        font-size: 1.3rem;
+    }
+    .people .people-title {
+        padding-bottom: 3rem;
+        margin-bottom: 3.5rem;
+        font-size: 1.8rem;
+    }
+    .people .people-img {
+        width: 7rem;
+        height: 7rem;
+    }
+    .people .people-infor {
+        padding-left: 1rem;
+    }
+    .people .people-name {
+        font-size: 1rem;
+        padding-right: 5rem;
+    }
+    .people .people-job {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        padding-right: 5rem;
+    }
+    .people .people-infor-desc::before{
+        width: 5rem;
+        height: 0.2rem;
+    }
+    .people .people-infor-desc {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        padding-top: 2rem;
+        margin-top: 1.5rem;
+    }
+    .people .people-item {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .people .people-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 1.5rem;
+    }
+}
+@include media(max,xxs){
+    .people .people-title::after {
+        width: 5rem;
+        height: 0.2rem;
+    }
+    .people{
+        padding-top: 3rem;
+    }
+    .people .people-caption {
+        padding-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .people .people-title {
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        font-size: 1.4rem;
+    }
+    .people .people-img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .people .people-infor {
+        padding-left: 1rem;
+    }
+    .people .people-name {
+        font-size: 0.8rem;
+        padding-right: 3.5rem;
+    }
+    .people .people-job {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+    }
+    .people .people-infor-desc::before {
+        width: 3rem;
+        height: 0.1rem;
+    }
+    .people .people-infor-desc {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+        padding-top: 1.5rem;
+        margin-top: 0.5rem;
+    }
+    .people .people-item {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .people .people-list {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}

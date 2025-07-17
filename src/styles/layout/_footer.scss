@@ -1,0 +1,624 @@
+@use "@styles/utils" as *;
+
+.footer {
+  padding-top: 7.5rem;
+  background-color: $bg-color;
+  .container {
+    display: flex;
+    // column-gap: 1.5rem;
+    row-gap: 7rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-mogo {
+    // max-width: 48rem;
+    width: 40%;
+  }
+  .footer-mogo-title {
+    font-size: 4.6rem;
+    color: $gray-dark-color;
+    font-weight: 700;
+    font-family: $primary-font;
+    line-height: 1;
+    padding-bottom: 4rem;
+  }
+  .footer-mogo-desc {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: $text-color;
+    font-weight: 400;
+    font-family: $secondary-font;
+  }
+  .footer-mogo-follower {
+    display: flex;
+    padding-top: 5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    border-bottom: 1px solid $gray-dark-color;
+  }
+  .footer-mogo-follower-number {
+    font-size: 1.8rem;
+    color: $title-color;
+    font-weight: 700;
+    font-family: $primary-font;
+  }
+  .footer-mogo-follower-text {
+    font-size: 1.4rem;
+    color: $title-color;
+    font-weight: 300;
+    font-family: $primary-font;
+    padding-left: 1rem;
+    line-height: 1;
+  }
+  .footer-mogo-social {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3.5rem;
+
+    & i {
+      color: $third-color;
+      padding-right: 1rem;
+    }
+  }
+  .footer-mogo-social-text {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: $text-color;
+    font-weight: 300;
+    font-style: italic;
+    font-family: $secondary-font;
+    padding-right: 2rem;
+  }
+  .footer-mogo-form {
+    display: flex;
+    max-width: 35rem;
+  }
+  .footer-mogo-input {
+    // width: 23rem;
+    // height: 3.5rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid $gray-dark-color;
+    background-color: white;
+    border-radius: 0;
+    font-size: 1.5rem;
+    text-wrap: nowrap;
+    color: $title-color;
+    font-weight: 300;
+    font-style: italic;
+    font-family: $secondary-font;
+    &::placeholder {
+      color: $text-color;
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-family: $secondary-font;
+    }
+  }
+
+  .footer-mogo-button {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: $primary-font;
+    text-align: center;
+    // width: 12rem;
+    // aspect-ratio: 15 / 3.5;
+    padding: 1rem 2.5rem;
+    background-color: $third-color;
+  }
+  //______________________________________________________________
+  .footer-blog {
+    // max-width: 39rem;
+    width: 32.5%;
+  }
+  .footer-blog-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $title-color;
+    font-weight: 700;
+    font-family: $primary-font;
+    padding-bottom: 4rem;
+  }
+  .footer-blog-item {
+    display: flex;
+    padding-bottom: 3rem;
+  }
+  .footer-blog-img {
+    width: 12rem;
+    aspect-ratio: 12 / 8;
+    object-fit: cover;
+  }
+  .footer-blog-info {
+    padding-left: 2rem;
+  }
+  .footer-blog-info-title {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    color: $title-color;
+    font-weight: 400;
+    font-family: $primary-font;
+    @include textellip(2);
+  }
+  .footer-blog-info-date {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    color: $text-color;
+    font-weight: 300;
+    font-style: italic;
+    font-family: $secondary-font;
+    padding-top: 1rem;
+  }
+
+  //______________________________________________________________
+  .footer-instagram {
+    // max-width: 27rem;
+    width: 22.5%;
+  }
+  .footer-instagram-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $title-color;
+    font-weight: 700;
+    font-family: $primary-font;
+    padding-bottom: 4rem;
+  }
+  .footer-instagram-img {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    & img {
+      flex-shrink: 0;
+      width: calc(33.333333% - 4px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
+  .footer-instagram-more {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    color: $text-color;
+    font-weight: 300;
+    font-style: italic;
+    font-family: $secondary-font;
+    padding-top: 2rem;
+    cursor: pointer;
+  }
+  //______________________________________________________________
+  .footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 2.5rem 0;
+    border-top: 1px solid $gray-dark-color;
+
+    & p {
+      font-size: 1.4rem;
+      color: $text-color;
+      font-weight: 400;
+      font-family: $primary-font;
+      text-align: center;
+    }
+
+    & a {
+      color: $primary-color;
+      cursor: pointer;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+@include between(md, lg) {
+  .footer .footer-mogo {
+    width: 35%;
+  }
+  .footer .footer-mogo-title {
+    font-size: 3.6rem;
+    padding-bottom: 4rem;
+  }
+  .footer .footer-mogo-desc {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+  .footer .footer-mogo-social-text {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    padding-right: 1rem;
+  }
+  .footer .footer-mogo-social i {
+    padding-right: 1rem;
+    font-size: 1.25rem;
+  }
+  .footer .footer-mogo-input {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-input::placeholder {
+    font-size: 1.2rem;
+  }
+  .footer .footer-mogo-button {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .footer .footer-blog {
+    width: 37.5%;
+  }
+  .footer .footer-blog-img {
+    width: 6rem;
+    aspect-ratio: 12/8;
+    object-fit: cover;
+    flex-shrink: 1;
+  }
+  .footer .footer-blog-item {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-blog-info {
+    padding-left: 1rem;
+  }
+  .footer .footer-blog-info-title {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  .footer .footer-blog-info-date {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    padding-top: 0.75rem;
+  }
+  .footer .footer-text {
+    padding: 1.5rem 0;
+  }
+  .footer .footer-text p {
+    font-size: 1.2rem;
+  }
+  .footer .footer-text a {
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+  }
+}
+@include between(sm, md) {
+  .footer .footer-mogo {
+    width: 35%;
+  }
+  .footer .footer-mogo-title {
+    font-size: 3.6rem;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-mogo-desc {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
+  .footer .footer-mogo-social-text {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    padding-right: 1rem;
+  }
+  .footer .footer-mogo-social i {
+    padding-right: 0.5rem;
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-input {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-input::placeholder {
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-button {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .footer .footer-blog {
+    width: 37.5%;
+  }
+  .footer .footer-blog-img {
+    width: 5rem;
+    aspect-ratio: 12/8;
+    object-fit: cover;
+    flex-shrink: 1;
+  }
+  .footer .footer-blog-item {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-blog-info {
+    padding-left: 1rem;
+  }
+  .footer .footer-blog-info-title {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+  .footer .footer-blog-info-date {
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+    padding-top: 0.75rem;
+  }
+  .footer .footer-text {
+    padding: 1.5rem 0;
+  }
+  .footer .footer-text p {
+    font-size: 1.2rem;
+  }
+  .footer .footer-text a {
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+  }
+  .footer .footer-mogo-follower {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+  }
+  .footer .footer-mogo-follower-number {
+    font-size: 1.5rem;
+  }
+  .footer .footer-mogo-follower-text {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+  }
+}
+@include between(xs, sm) {
+  .footer .container {
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "blog" "instagram" "mogo";
+  }
+  .footer .footer-mogo {
+    width: 100%;
+    grid-area: mogo;
+  }
+  .footer .footer-blog {
+    width: 100%;
+    grid-area: blog;
+  }
+  .footer .footer-instagram {
+    width: 100%;
+    grid-area: instagram;
+  }
+  .footer .footer-mogo-desc {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+  }
+  .footer .footer-mogo-title {
+    font-size: 3.6rem;
+    padding-bottom: 4rem;
+  }
+  .footer .footer-mogo-input {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-input::placeholder {
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-button {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .footer .footer-mogo-form {
+    max-width: 25rem;
+  }
+}
+@include between(xxs, xs) {
+  .footer .container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "blog" "instagram" "mogo";
+  }
+  .footer .footer-mogo {
+    width: 100%;
+    grid-area: mogo;
+  }
+  .footer .footer-blog {
+    width: 100%;
+    grid-area: blog;
+  }
+  .footer .footer-instagram {
+    width: 100%;
+    grid-area: instagram;
+  }
+  .footer .footer-mogo-desc {
+    font-size: 1.2rem;
+    line-height: 2.6rem;
+  }
+  .footer .footer-mogo-title {
+    font-size: 2.6rem;
+    padding-bottom: 4rem;
+  }
+  .footer .footer-mogo-input {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-input::placeholder {
+    font-size: 1.2rem;
+  }
+  .footer .footer-mogo-button {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .footer .footer-mogo-form {
+    max-width: 25rem;
+  }
+  .footer .footer-blog-img {
+    width: 10rem;
+    aspect-ratio: 12/8;
+    object-fit: cover;
+    flex-shrink: 1;
+  }
+  .footer .footer-blog-item {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-blog-info {
+    padding-left: 1rem;
+  }
+  .footer .footer-blog-info-title {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+  .footer .footer-blog-info-date {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    padding-top: 0.75rem;
+  }
+  .footer .footer-text {
+    padding: 1.5rem 0;
+  }
+  .footer .footer-text p {
+    font-size: 1.2rem;
+  }
+  .footer .footer-text a {
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+  }
+  .footer .footer-mogo-follower {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+  }
+  .footer .footer-mogo-follower-number {
+    font-size: 1.5rem;
+  }
+  .footer .footer-mogo-follower-text {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+  }
+  .footer .footer-mogo-social-text {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    padding-right: 1rem;
+  }
+  .footer .footer-mogo-social i {
+    padding-right: 1rem;
+    font-size: 1.3rem;
+  }
+}
+@include media(max, xxs) {
+  .footer {
+    padding-top: 5rem;
+  }
+  .footer .container {
+    width: 100%;
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "blog" "instagram" "mogo";
+  }
+  .footer .footer-mogo {
+    width: 100%;
+    grid-area: mogo;
+  }
+  .footer .footer-blog {
+    width: 100%;
+    grid-area: blog;
+  }
+  .footer .footer-instagram {
+    width: 100%;
+    grid-area: instagram;
+  }
+  .footer .footer-mogo-desc {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+  .footer .footer-mogo-title {
+    font-size: 1.6rem;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-mogo-input {
+    padding: 0.25rem 1.5rem;
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-input::placeholder {
+    font-size: 1rem;
+  }
+  .footer .footer-mogo-button {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .footer .footer-mogo-form {
+    max-width: 20rem;
+  }
+  .footer .footer-blog-title {
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-blog-img {
+    width: 6rem;
+    aspect-ratio: 12/8;
+    object-fit: cover;
+    flex-shrink: 1;
+  }
+  .footer .footer-blog-item {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-blog-info {
+    padding-left: 1rem;
+  }
+  .footer .footer-blog-info-title {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .footer .footer-blog-info-date {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    padding-top: 0.75rem;
+  }
+  .footer .footer-instagram-title {
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+  }
+  .footer .footer-instagram-more {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    padding-top: 2rem;
+    cursor: pointer;
+  }
+  .footer .footer-text {
+    padding: 1rem 0;
+  }
+  .footer .footer-text p {
+    font-size: 1rem;
+  }
+  .footer .footer-text a {
+    font-size: 1rem;
+    padding-left: 0.25rem;
+  }
+  .footer .footer-mogo-follower {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+  }
+  .footer .footer-mogo-follower-number {
+    font-size: 1.25rem;
+  }
+  .footer .footer-mogo-follower-text {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+  .footer .footer-mogo-social-text {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    padding-right: 1rem;
+  }
+  .footer .footer-mogo-social i {
+    padding-right: 0.75rem;
+    font-size: 1rem;
+  }
+}

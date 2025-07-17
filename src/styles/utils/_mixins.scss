@@ -1,0 +1,173 @@
+@use "sass:map";
+@use 'variables' as *;
+
+@mixin media($type, $breakpoint) {
+  $value: map.get($breakpoints, $breakpoint);
+
+  @if $value == null {
+    @error "⛔ Breakpoint '#{$breakpoint}' chưa tồn tại.";
+  }
+
+  @if $type == max {
+
+    $value: $value - 0.01px;
+
+    @media (max-width: $value) {
+      @content;
+    }
+  } 
+  
+  @else if $type == min {
+    @media (min-width: $value) {
+      @content;
+    }
+  } 
+  
+  @else {
+    @error "⛔ Loại media '#{$type}' không hợp lệ.";
+  }
+}
+
+
+@mixin between($min, $max) {
+  $minVal: map.get($breakpoints, $min);
+  $maxVal: map.get($breakpoints, $max);
+
+  @if $minVal == null or $maxVal == null {
+    @error "⛔ Breakpoint '#{$min}' hoặc '#{$max}' không tồn tại.";
+  }
+
+  $maxVal: $maxVal - 0.01px;
+
+  @media (min-width: $minVal) and (max-width: $maxVal) {
+    @content;
+  }
+}
+
+// @include media(min,xxxl)
+// @include between(xxl,xxxl)
+// @include between(xl,xxl)
+// @include between(lg,xl)
+// @include between(md,lg)
+// @include between(sm,md)
+// @include between(xs,sm)
+// @include between(xxs,xs)
+// @include media(max,xxs)
+
+
+@mixin absoluteCenter($direction: ""){
+
+  position: absolute;
+  
+  @if $direction == "left"{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $direction == "top"{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == "both"{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+@mixin size($width ,$height: $width){
+  width: $width;
+  height: $height;
+}
+
+@mixin flexCenter(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexbox(
+  $justify-content: flex-start,
+  $align-item: stretch,
+  $direction: row,
+  $wrap: nowrap,
+  $flex: flex
+  )
+{
+  justify-content: $justify-content;
+  align-items: $align-item;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  display: $flex;
+}
+
+@mixin absoluteFull(){
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+//ẩn thanh scroll bar 
+@mixin hideScroll(){
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+      display: none;
+  }
+}
+
+
+@mixin textellip($rows: 1, $size: 100%){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $rows;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: $size;
+  max-width: $size;
+  white-space: normal;
+  word-break: break-word; 
+}
+// white-space: pre-wrap;  cắt theo ký tự , normal; cắt theo từ ;
+//word-break: break-word;  Ngắt các từ quá dài để không tràn khung viết liền ko khỏang trắng
+
+@mixin clampline($lines, $font-size, $line-height: 1.4) {
+  height: calc(#{$font-size} * #{$line-height} * #{$lines});
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+}
+
+@mixin scrollbar($scrollbar,$thumb,$radius,$track-color: white,$thumb-color: $gray-dark-color, $scrollbar-color:$track-color){
+        &::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: $track-color;
+            border-radius: $radius; // cả 2 mới có boder tác dụng 
+        }
+
+        &::-webkit-scrollbar
+        {
+            background-color: $scrollbar-color;  // màu 2 cái tam giác ở đầu 
+            width: $scrollbar;
+            border-radius: $radius; // cả 2 mới có boder tác dụng 
+        }
+
+        &::-webkit-scrollbar-thumb
+        {
+            background-color: $thumb-color;
+            height: $thumb;
+        }
+}
+
+@mixin scrollbarfirefox($track-color: rgba(235, 232, 232, 0.774),$thumb-color: $gray-dark-color,$default:thin){
+   @-moz-document url-prefix(){
+      scrollbar-width: $default; /* auto | thin | none */
+      scrollbar-color: $thumb-color $track-color; /* thumb color | track color */
+    }
+}

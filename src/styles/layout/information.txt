@@ -1,0 +1,11 @@
+ Style cấu trúc tổng thể
+
+ layout	bố cục, dàn trang	chia cột (grid), header, footer, sidebar…
+
+ _grid.scss	: hệ thống lưới	chia layout theo hàng/cột (grid system)
+
+ _header.scss :	phần đầu trang	thường chứa logo, nav menu
+
+ _footer.scss :	phần cuối trang	thường chứa thông tin bản quyền, liên hệ
+
+_structure.scss : phần chứa class dùng chung ;

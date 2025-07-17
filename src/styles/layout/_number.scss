@@ -1,0 +1,151 @@
+@use '@styles/utils' as * ;
+
+
+.number{
+    padding-bottom: 1rem;
+    background-color: $third-color;
+    
+    .number-list{
+        width: 100%;
+        @include flexbox(center,center);
+    }
+
+    .number-item{
+        width: 20%;
+        aspect-ratio: 24 / 27;
+        @include flexbox(center,center,column);
+        border-right: 1px solid #b5eae0;
+        padding: 8.5rem 3.5rem;
+        
+    }
+    .number-item:first-child{
+        border-left: 1px solid #b5eae0;
+    }
+
+    .number-count{
+        font-size: 7.2rem;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: 700;
+        font-family: $primary-font;
+        text-align: center;
+        line-height: normal;
+        padding-bottom: 0.8rem;
+    }
+    
+    .number-text{
+        display: block;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: 400;
+        font-family: $primary-font;
+        text-align: center;
+        @include textellip;
+        // padding: 0 3.5rem;
+    }
+}
+
+@include between(lg,xl){
+    .number .number-item {
+        width: 20%;
+        padding: 0 1.5rem;
+    }
+    .number .number-count {
+        font-size: 5.2rem;
+        padding-bottom: 0.7rem;
+    }
+    .number .number-text {
+        font-size: 1.2rem;
+    }
+};
+@include between(md,lg){
+    .number .number-item {
+        width: 20%;
+        padding: 0 1rem;
+    }
+    .number .number-count {
+        font-size: 4.2rem;
+        padding-bottom: 0.6rem;
+    }
+    .number .number-text {
+        font-size: 1rem;
+    }
+};
+@include between(sm,md){
+    .number .number-item {
+        width: 20%;
+        padding: 0 0.5rem;
+    }
+    .number .number-count {
+        font-size: 3.2rem;
+        padding-bottom: 0.5rem;
+    }
+    .number .number-text {
+        font-size: 0.8rem;
+    }
+};
+@include between(xs,sm){
+    .number .number-item {
+        width: 20%;
+        padding: 0 0.25rem;
+    }
+    .number .number-count {
+        font-size: 2.2rem;
+        padding-bottom: 0.4rem;
+    }
+    .number .number-text {
+        font-size: 0.7rem;
+    }
+};
+@include between(xxs,xs){
+    .number .number-item {
+        width: 20%;
+        padding: 0 0.25rem;
+        border-right: 0.5px solid #b5eae0;
+        
+        &:first-child{
+            border-left: 0.5px solid #b5eae0;
+        }
+    }
+    .number .number-count {
+        font-size: 1.8rem;
+        padding-bottom: 0.3rem;
+    }
+    .number .number-text {
+        font-size: 0.5rem;
+    }
+};
+ @include media(max,xxs){
+    html,body{
+        @include hideScroll;
+        overflow: auto;
+    }
+    .number .number-list{
+        overflow-x: auto;
+        @include hideScroll;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        padding-left: 35vw;
+    }
+    .number .number-item {
+        display: flex;
+        width: 25vw;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        padding: 0 0.5rem;
+        border-right: 0.5px solid #b5eae0;
+        scroll-snap-align: center;
+        
+        &:first-child{
+            border-left: 0.5px solid #b5eae0;
+        }
+    }
+    .number .number-count {
+        font-size: 1.5rem;
+        padding-bottom: 0.3rem;
+    }
+    .number .number-text {
+        font-size: 0.6rem;
+    }
+};

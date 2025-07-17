@@ -1,0 +1,5 @@
+Style theo chủ đề (theme)
+
+themes :	giao diện	dark mode / light mode hoặc theme màu sắc
+
+_theme.scss : cấu hình giao diện	có thể dùng CSS variable để chuyển theme

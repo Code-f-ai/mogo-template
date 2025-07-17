@@ -1,0 +1,680 @@
+@use '@styles/utils' as * ;
+
+.header{
+    min-height: 100rem;
+    background: linear-gradient(to bottom, rgba($primary-color,0.8), rgba($secondary-color,0.8)),
+     url(@images/header.png) no-repeat center center /cover;
+
+    & .header-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-top: 5.5rem;
+
+        & .header-logo{
+            font-family: $primary-font;
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+
+        }
+        & .header-toggle{
+            display: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            align-self: center;
+        }
+        & .header-menu{
+            display: flex;
+            gap: 5.5rem;
+
+            & .header-menu-item{
+                
+                & .header-menu-link{
+                    display: inline-block;
+                    font-family: $primary-font;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: white;
+                    padding-bottom: 1rem;
+                    border-bottom: 3px solid transparent;
+                    transition: color 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
+
+                    
+                    &:hover:not(.header-menu-icon){
+                        color: $hover-color;
+                        border-bottom: 3px solid $hover-color;
+    
+                    }
+                }
+            }
+        }
+    }
+
+    & .header-content{
+        max-width: 85rem;
+        padding-top: 17rem;
+        text-align: center;
+        margin: 0 auto;
+        color: white;
+
+        & .header-content-caption{
+            font-family: $third-font;
+            font-weight: 400;
+            font-size: 7.2rem;
+            padding-bottom: 2.5rem;
+
+        }
+
+        & .haeder-content-main{
+            position: relative;
+            font-family: $primary-font;
+            font-weight: 700;
+            font-size: 15rem;
+            text-transform: uppercase;
+            line-height: 0.933;
+            padding-bottom: calc(7.5rem - 1.2rem);
+            margin-bottom: 5rem;
+
+            &::after{
+                content:"";
+                width: 6rem;
+                height: 0.3rem;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #ffffff;
+            }
+        }
+       
+
+        & .header-content-more{
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            border: 3px solid #ffffff;
+            font-family: $primary-font;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+    }
+
+    & .header-bottom{
+        display: flex;
+        gap: 3rem;
+        margin-top: 15.5rem;
+        padding-bottom: 2.5rem;
+        color: #ffffff;
+
+        & .header-bottom-item{
+            position: relative;
+            width: 28rem;
+            border-top: 3px solid rgba($color: #ffffff, $alpha: 0.5);
+            padding-top: 2.5rem;
+            transition: border-top 0.2s ease-in-out;
+
+            &:before{
+                content: "";
+                width: 0;
+                height: 0.3rem;
+                background-color: #f38181;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            &:hover{
+                border-top: inherit solid rgba($color: #ffffff, $alpha: 1);
+            }
+
+            &:hover .header-bottom-number{
+                color: #ffffff;
+            }
+
+            &:hover:before{
+                opacity: 1;
+                animation: color_boder 0.25s linear forwards;
+            }
+
+            @keyframes color_boder {
+                to{
+                    width: 7rem;
+                }
+            }
+            
+
+            
+            & .header-bottom-number{
+                font-family: $primary-font;
+                font-weight: 700;
+                font-size: 2.4rem;
+                color: rgba($color: #ffffff, $alpha: 0.5);
+                cursor: pointer;
+
+                transition: color 0.25s ease-in-out;
+            }
+            & .header-bottom-text{
+                font-family: $primary-font;
+                font-weight: 300;
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                color: rgba($color: #ffffff, $alpha: 0.5);
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    
+}
+
+@include media(min,xxxl){
+        .header .header-content .haeder-content-main {
+        font-size: 11rem;
+    }
+}
+
+@include between(xxl,xxxl) {
+    .header .header-content .header-content-caption {
+        font-size: 5.2rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 10rem;
+    }
+}
+
+@include between(xl,xxl) {
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid transparent;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: 2px solid #fbe389;
+    }
+    .header .header-content .header-content-caption {
+        font-size: 4.5rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 8rem;
+    }
+}
+
+@include between(lg,xl) {
+    .header {
+        min-height: 75rem;
+    }
+    .header .header-top {
+        padding-top: 2.5rem;
+    }
+    .header .header-top .header-menu {
+        gap: 4rem;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid transparent;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: 2px solid #fbe389;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        font-size: 12px;
+    }
+    .header .header-content .header-content-caption {
+        font-size: 4rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 6rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-text {
+        font-size: 1.5rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-number {
+         font-size: 1.8rem;
+    }
+}
+
+@include between(md,lg) {
+    .header {
+        min-height: 75rem;
+    }
+    .header .header-top {
+        padding-top: 2rem;
+    }
+    .header .header-top .header-logo {
+        font-size: 25px;
+    }
+    .header .header-top .header-menu {
+        gap: 3rem;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid transparent;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: 2px solid #fbe389;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        font-size: 10px;
+    }
+    .header .header-content {
+        padding-top: 15rem;
+    }
+
+    .header .header-content .header-content-caption {
+        font-size: 3rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 5rem;
+    }
+    .header .header-content .haeder-content-main::after {
+        width: 5rem;
+        height: 0.2rem;
+    }
+    .header .header-content .header-content-more {
+        padding: 1rem 2.5rem;
+        border: 2px solid #fff;
+        font-weight: 600;
+        font-size: 10px;
+    }
+    .header .header-bottom {
+        gap: 3rem;
+        margin-top: 15rem;
+    }
+    .header .header-bottom .header-bottom-item {
+        padding-top: 2rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-text {
+        font-size: 1.3rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-number {
+         font-size: 1.5rem;
+    }
+}
+
+@include between(sm,md) {
+    .header {
+        min-height: 50rem;
+    }
+    .header .header-top {
+        padding-top: 1.5rem;
+    }
+    .header .header-top .header-logo {
+        font-size: 20px;
+    }
+    .header .header-top .header-menu {
+        gap: 2.5rem;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid transparent;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: 2px solid #fbe389;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        font-size: 8px;
+    }
+    .header .header-content {
+        padding-top: 10rem;
+    }
+    
+    .header .header-content .header-content-caption {
+        font-size: 3rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 5rem;
+    }
+    .header .header-content .haeder-content-main {
+        padding-bottom: 4.3rem;
+        margin-bottom: 3rem;
+    }
+    .header .header-content .haeder-content-main::after {
+        width: 5rem;
+        height: 0.2rem;
+    }
+    .header .header-content .header-content-more {
+        padding: 0.8rem 2rem;
+        border: 2px solid #fff;
+        font-weight: 600;
+        font-size: 8px;
+    }
+    .header .header-bottom {
+        gap: 3rem;
+        margin-top: 8rem;
+    }
+    .header .header-bottom .header-bottom-item::before {
+        height: 0.2rem;
+    }
+    .header .header-bottom .header-bottom-item {
+        border-top: 2px solid rgba(255, 255, 255, 0.5);
+    }
+    .header .header-bottom .header-bottom-item {
+        padding-top: 1.5rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-text {
+        font-size: 1rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-number {
+         font-size: 1.2rem;
+    }
+}
+
+@include between(xs,sm) {
+    .header {
+        min-height: 40rem;
+    }
+    .header .header-top {
+        padding-top: 1.5rem;
+    }
+    .header .header-top .header-logo {
+        font-size: 15px;
+    }
+    .header .header-top .header-menu {
+        gap: 2rem;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid transparent;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: 1px solid #fbe389;
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link {
+        font-size: 7px;
+    }
+    .header .header-content {
+        padding-top: 8rem;
+    }
+    
+    .header .header-content .header-content-caption {
+        font-size: 2.5rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 4rem;
+    }
+    .header .header-content .haeder-content-main {
+        padding-bottom: 4rem;
+        margin-bottom: 2.5rem;
+    }
+    .header .header-content .haeder-content-main::after {
+        width: 4.5rem;
+        height: 0.2rem;
+    }
+    .header .header-content .header-content-more {
+        padding: 0.8rem 2rem;
+        border: 2px solid #fff;
+        font-weight: 600;
+        font-size: 8px;
+    }
+    .header .header-bottom {
+        gap: 3rem;
+        margin-top: 7.5rem;
+    }
+    .header .header-bottom .header-bottom-item::before {
+        height: 0.2rem;
+    }
+    .header .header-bottom .header-bottom-item {
+        border-top: 2px solid rgba(255, 255, 255, 0.5);
+    }
+    .header .header-bottom .header-bottom-item {
+        padding-top: 1rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-text {
+        font-size: 0.9rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-number {
+         font-size: 1.1rem;
+    }
+}
+
+@include between(xxs,xs) {
+    .header {
+        min-height: 35rem;
+    }
+    .header .header-top {
+        padding-top: 1rem;
+        overflow: hidden;
+    }
+    .header .header-top .header-logo {
+        font-size: 12.5px;
+    }
+        .header-menu-link:hover:not(.header-menu-icon) {
+        color: inherit;
+        border-bottom: none;
+        pointer-events: none;
+    }
+    .header .header-top .header-toggle{
+        display: inline-block;
+
+    }
+    .header .header-top .header-menu {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 85%;
+        max-height: 35rem;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0 3rem;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+
+        
+
+        & .header-menu-item .header-menu-link {
+            color: black;
+            border-bottom: none;
+            padding-left: 1.5rem;
+            font-size: 8px;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        & .header-menu-item{
+            // text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+            &:hover{
+                background-color: $secondary-color;
+            }
+            &:hover .header-menu-link{
+                color: white;
+            }
+        }
+
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: none;
+    }  
+    .header .header-top .is-expand{
+        transform: translateX(0);
+    }
+    .header .header-content {
+        padding-top: 5rem;
+    }
+    .header .header-content .header-content-caption {
+        padding-bottom: 1.5rem;
+    }
+    .header .header-content .header-content-caption {
+        font-size: 1.8rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 3rem;
+    }
+    .header .header-content .haeder-content-main {
+        padding-bottom: 3.25rem;
+        margin-bottom: 2rem;
+    }
+    .header .header-content .haeder-content-main::after {
+        width: 4rem;
+        height: 0.1rem;
+    }
+    .header .header-content .header-content-more {
+        padding: 0.65rem 1.75rem;
+        border: 1px solid #fff;
+        font-weight: 600;
+        font-size: 6px;
+    }
+    .header .header-bottom {
+        gap: 2rem;
+        margin-top: 5rem;
+    }
+    .header .header-bottom .header-bottom-item::before {
+        height: 0.1rem;
+    }
+    @keyframes color_boder {
+        to{
+            width: 3rem;
+        }
+    }
+    .header .header-bottom .header-bottom-item {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .header .header-bottom .header-bottom-item {
+        padding-top: 0.75rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-text {
+        font-size: 0.6rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-number {
+         font-size: 0.8rem;
+    }
+}
+
+@include media(max,xxs){
+    .header {
+        min-height: 25rem;
+    }
+    .header .header-top {
+        padding-top: 0.5rem;
+        overflow: hidden;
+    }
+    .header .header-top .header-logo {
+        font-size: 10px;
+    }
+    .header-menu-link:hover:not(.header-menu-icon) {
+        color: inherit;
+        border-bottom: none;
+        pointer-events: none;
+    }
+    .header .header-top .header-toggle{
+        display: inline-block;
+
+    }
+    .header .header-top .header-menu {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 85%;
+        max-height: 25rem;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0 3rem;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+
+        
+
+        & .header-menu-item .header-menu-link {
+            color: black;
+            border-bottom: none;
+            padding-left: 1.5rem;
+            font-size: 8px;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        & .header-menu-item{
+            // text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+            &:hover{
+                background-color: $secondary-color;
+            }
+            &:hover .header-menu-link{
+                color: white;
+            }
+        }
+
+    }
+    .header .header-top .is-expand{
+        transform: translateX(0);
+    }
+    .header .header-top .header-menu .header-menu-item .header-menu-link:hover:not(.header-menu-icon) {
+        border-bottom: none;
+    }   
+
+    .header .header-content {
+        padding-top: 2.5rem;
+    }
+    .header .header-content .header-content-caption {
+        padding-bottom: 1rem;
+    }
+    .header .header-content .header-content-caption {
+        font-size: 1.5rem;
+    }
+    .header .header-content .haeder-content-main {
+        font-size: 2rem;
+    }
+    .header .header-content .haeder-content-main {
+        padding-bottom: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .header .header-content .haeder-content-main::after {
+        width: 2.5rem;
+        height: 0.1rem;
+    }
+    .header .header-content .header-content-more {
+        padding: 0.5rem 1.25rem;
+        border: 1px solid #fff;
+        font-weight: 600;
+        font-size: 5px;
+    }
+    .header .header-bottom {
+        gap: 2rem;
+        margin-top: 3.5rem;
+    }
+    .header .header-bottom .header-bottom-item::before {
+        height: 0.1rem;
+    }
+    @keyframes color_boder {
+        to{
+            width: 3rem;
+        }
+    }
+    .header .header-bottom .header-bottom-item {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .header .header-bottom .header-bottom-item {
+        padding-top: 0.3rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-text {
+        font-size: 0.5rem;
+    }
+    .header .header-bottom .header-bottom-item .header-bottom-number {
+         font-size: 0.6rem;
+    }
+    html,body{
+        @include hideScroll;
+        overflow: auto;
+    }
+}
+
+
+
+
+ 

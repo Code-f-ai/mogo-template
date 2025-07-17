@@ -1,0 +1,280 @@
+@use "@styles/utils" as *;
+
+.testimonial {
+  background-color: $gray-color;
+
+  .testimonial-slider {
+    position: relative;
+    width: 100%;
+  }
+
+  .testimonial-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    padding: 3rem 7rem;
+  }
+
+  .testimonial-img {
+    width: 15rem;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 5rem;
+    height: 13rem;
+  }
+  .testimonial-desc {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    color: $text-color;
+    font-weight: 300;
+    font-style: italic;
+    font-family: $secondary-font;
+    @include textellip(3);
+  }
+  .testimonial-author {
+    position: relative;
+    padding-left: 7rem;
+    font-size: 2.4rem;
+    color: #333333;
+    font-weight: 400;
+    font-family: $third-font;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 6rem;
+      height: 0.3rem;
+      background-color: $primary-color;
+    }
+  }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////
+/////////////////// style for slider default ////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+
+//xóa bỏ các dấu . . . ở dưới slider 
+.slick-dots {display: none!important;}
+// item 
+.testimonial .testimonial-body {display: flex !important}
+
+//tùy biến nút 
+.slick-arrow{
+    cursor: pointer;
+    font-size: 3rem;
+    color: gray;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// xóa nút mặc định trái phải 
+.slick-prev:before {
+    content: "←";
+    display: none;
+  }
+  .slick-next:before {
+    content: "→";
+    display: none;
+}
+
+//kích thước khung slider
+.testimonial .testimonial-slider { 
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+}
+//kích thước slider nằm trong 
+#slick-slide00{     
+  max-width: 100%;
+}
+
+// xóa bỏ ấn vào thì nó chuyển màu trong suốt ở nút 
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: gray;
+  outline: none;
+  background: transparent;
+  opacity: 1;
+}
+
+/////////////////////////////////////////////////////////////////////
+
+@include between(md,lg){
+  $size : 13rem;
+    .testimonial .testimonial-body {
+        padding: 2rem 3rem;
+    }
+
+    .testimonial .testimonial-img {
+        width: $size;
+    }
+    .testimonial .testimonial-content{
+      height: calc($size - 2rem);
+    }
+    .testimonial .testimonial-desc {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .testimonial .testimonial-author {
+        padding-left: 7rem;
+        font-size: 2.2rem;
+    }
+
+    .testimonial .testimonial-author::before {
+        width: 5rem;
+        height: 0.3rem;
+    }
+    .slick-arrow{
+        font-size: 2rem;
+    }
+}
+@include between(sm,md){
+   $size : 10rem;
+    .testimonial .testimonial-body {
+        padding: 1rem 2rem;
+    }
+
+    .testimonial .testimonial-img {
+        width: $size;
+    }
+    .testimonial .testimonial-content{
+      height: calc($size - 1rem);
+    }
+    .testimonial .testimonial-desc {
+        font-size: 1.25rem;
+        line-height: 1.8rem;
+    }
+
+    .testimonial .testimonial-author {
+        padding-left: 5rem;
+        font-size: 2rem;
+    }
+
+    .testimonial .testimonial-author::before {
+        width: 5rem;
+        height: 0.3rem;
+    }
+    .slick-arrow{
+        font-size: 1.5rem;
+    }
+}
+@include between(xs,sm){
+   $size : 8rem;
+    .testimonial .testimonial-body {
+        padding: 1rem 2rem;
+    }
+
+    .testimonial .testimonial-img {
+        width: $size;
+    }
+    .testimonial .testimonial-content{
+      height: calc($size - 1rem);
+    }
+    .testimonial .testimonial-desc {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .testimonial .testimonial-author {
+        padding-left: 5rem;
+        font-size: 1.2rem;
+    }
+
+    .testimonial .testimonial-author::before {
+        width: 4rem;
+        height: 0.2rem;
+    }
+    .slick-arrow{
+        font-size: 1.5rem;
+    }
+}
+@include between(xxs,xs){
+   $size : 6rem;
+    .testimonial .testimonial-body {
+        padding: 1rem 2rem;
+    }
+
+    .testimonial .testimonial-img {
+        width: $size;
+    }
+    .testimonial .testimonial-img img {
+        width: $size - 3rem;
+        height: $size - 3rem;
+    }
+    .testimonial .testimonial-content{
+      height: calc($size - 1rem);
+      padding-left: 3rem;
+    }
+    .testimonial .testimonial-desc {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+
+    .testimonial .testimonial-author {
+        padding-left: 3.5rem;
+        font-size: 1rem;
+    }
+
+    .testimonial .testimonial-author::before {
+        width: 3rem;
+        height: 0.2rem;
+    }
+    .slick-arrow{
+        font-size: 1.5rem;
+    }
+}
+@include media(max,xxs){
+   $size : 3.5rem;
+    .testimonial .testimonial-body {
+        padding: 1rem 2rem;
+    }
+
+    .testimonial .testimonial-img {
+        width: $size;
+    }
+    .testimonial .testimonial-img img {
+        width: $size - 2rem;
+        height: $size - 2rem;
+    }
+    .testimonial .testimonial-content{
+      height: $size;
+      padding-left: 1rem;
+    }
+    .testimonial .testimonial-desc {
+        font-size: 0.6rem;
+        line-height: 1rem;
+        @include textellip(2);
+    }
+
+    .testimonial .testimonial-author {
+        padding-left: 2.5rem;
+        font-size: 0.6rem;
+    }
+
+    .testimonial .testimonial-author::before {
+        width: 2rem;
+        height: 0.1rem;
+    }
+    .slick-arrow{
+        font-size: 1rem;
+    }
+}

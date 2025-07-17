@@ -1,0 +1,38 @@
+@use '@styles/utils' as * ;
+.brand{
+    background-color: $gray-color;
+
+    .brand-img{
+        padding: 6rem 0;
+    }
+}
+@include between(lg,xl){
+    .brand .brand-img{
+        padding: 4rem 0;
+    }
+}
+@include between(md,lg){
+    .brand .brand-img{
+        padding: 3.5rem 0;
+    }
+}
+@include between(sm,md){
+    .brand .brand-img{
+        padding: 3rem 0;
+    }
+}
+@include between(xs,sm){
+    .brand .brand-img{
+        padding: 2.5rem 0;
+    }
+}
+@include between(xxs,xs){
+    .brand .brand-img{
+        padding: 2rem 0;
+    }
+}
+@include media(max,xxs){
+    .brand .brand-img{
+        padding: 1.5rem 0;
+    }
+}

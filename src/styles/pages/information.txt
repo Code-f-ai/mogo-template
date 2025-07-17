@@ -1,0 +1,5 @@
+Style riêng từng trang
+
+pages :	trang riêng biệt	style cho từng page cụ thể như Home, About, Product…
+
+_home.scss :	trang chủ	style riêng cho homepage

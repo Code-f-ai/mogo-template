@@ -1,0 +1,49 @@
+// utils/_variables.scss
+
+// Font family
+$font-base: 'Inter', sans-serif;
+$font-title: 'Playfair Display', serif;
+
+// Colors
+$color-text: #111;
+$color-bg: #fff;
+$color-link: #0070f3;
+$color-link-hover: #0051a8;
+
+// Font sizes
+$fs-base: 1.6rem;
+$fs-h1: 3.2rem;
+$fs-h2: 2.8rem;
+$fs-h3: 2.4rem;
+
+// media
+$breakpoints: (
+  xxs: 360px,
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+//-----------------------------------------------
+
+$primary-color : #e98483;
+$secondary-color : #edd688;
+$third-color : #95e1d3;
+$title-color : #333333;
+$text-color : #999999;
+$gray-color : #f8f8f8;
+$gray-dark-color : #cccccc;
+$gray-light-color : #f5f5f5;
+$hover-color : #fbe389;
+$bg-color: rgba(245, 245, 245, 0.961);
+
+$primary-font : "Montserrat", sans-serif;
+$secondary-font : "Roboto", sans-serif;
+$third-font : "Kaushan Script", cursive;
+
+$wrapper : 1920px;
+$container : 1200px;
+

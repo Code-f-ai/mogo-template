@@ -1,0 +1,70 @@
+// base/_reset.scss
+@use "../utils" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+
+  // overflow: auto;
+  // -ms-overflow-style: none;      // Cho IE
+  // scrollbar-width: none;         // Cho Firefox
+
+  // &::-webkit-scrollbar {
+  //   display: none;               // Cho Chrome, Safari
+  // }
+}
+
+body {
+  font-family: $font-base;
+  font-size: $fs-base;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: $color-bg;
+  // color: $color-text;
+  color: $title-color;
+
+  // overflow: auto;
+  // -ms-overflow-style: none;      // Cho IE
+  // scrollbar-width: none;         // Cho Firefox
+
+  // &::-webkit-scrollbar {
+  //   display: none;               // Cho Chrome, Safari
+  // }
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
