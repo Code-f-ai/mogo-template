@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  base: '/mogo-template/',
   resolve: {
     alias: {
        '@styles': path.resolve(__dirname, 'src/styles'),
